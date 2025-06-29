@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us - Emergency Dispatch System</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Tailwind + Additional Animations -->
+  <style>
+    /* Scrolling Text */
+    .scrolling-text {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scroll-left 15s linear infinite;
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: black;
+      background-color: white;
+      padding: 0.5rem;
+      text-align: center;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Fade and Slide Animations */
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 1s ease-out forwards;
+    }
+
+    @keyframes slide-up {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-slide-up {
+      animation: slide-up 1s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-blue-100 to-blue-200 text-gray-800">
+
+  <!-- Scrolling Text -->
+  <div class="scrolling-text">
+    🚨 LUSAKA EMERGENCY DISPATCH SYSTEM 🚨
+  </div>
+
+  <!-- Header with Logo and Navigation -->
+  <header class="bg-gray-900 text-white shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+      <!-- Logo -->
+      <div class="flex-shrink-0 mr-6">
+        <img src="Pictures/pic 2.png" alt="Logo" class="w-16 h-16 rounded-full border-2 border-white"/>
+      </div>
+      <!-- Navigation -->
+      <nav class="flex flex-wrap gap-4 text-sm md:text-base">
+        <a href="Home.html" class="hover:text-yellow-400">Home</a>
+        <a href="Register.html" class="hover:text-yellow-400">Register</a>
+        <a href="Login.html" class="hover:text-yellow-400">Login</a>
+        <a href="Services.html" class="hover:text-yellow-400">Services</a>
+        <a href="Profile.html" class="hover:text-yellow-400">My Profile</a>
+        <a href="About.html" class="hover:text-yellow-400 font-semibold">About Us</a>
+        <a href="Contact.html" class="hover:text-yellow-400">Contact Us</a>
+        <a href="EmergencyTips.html" class="hover:text-yellow-400">Emergency Tips</a>
+        <a href="Dash-board.php" class="hover:text-yellow-400">Dashboard</a>
+        <a href="Logout.html" class="hover:text-red-400 font-semibold">Logout</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto px-4 py-12 animate-fade-in">
+    <h2 class="text-4xl font-bold mb-6 text-center text-red-700 animate-slide-up">About Us</h2>
+
+    <p class="mb-6 text-lg leading-relaxed">
+      The <strong>Emergency Dispatch System</strong> is a centralized platform developed to improve safety and emergency coordination in Lusaka, particularly within the Matero and Mandevu areas. We facilitate rapid communication between citizens and emergency responders—<span class="font-semibold text-red-600">police</span>, <span class="font-semibold text-green-600">hospitals</span>, and <span class="font-semibold text-yellow-600">firefighters</span>.
+    </p>
+
+    <p class="mb-6 text-lg">
+      Our mission is to enhance response times and provide reliable emergency support using real-time geolocation tracking, transparent reporting, and strong partnerships with local service providers.
+    </p>
+
+    <!-- Partners -->
+    <section class="mb-10">
+      <h3 class="text-3xl font-semibold text-center text-red-700 mb-6">Our Partners</h3>
+
+      <!-- Police Stations -->
+      <div class="mb-8">
+        <h4 class="text-2xl font-semibold mb-4 text-blue-700">Police Stations</h4>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-5 rounded shadow animate-slide-up">
+            <h5 class="text-xl font-bold text-blue-800">Matero Police Station</h5>
+            <p>24/7 security services on Commonwealth Road. Contact: 0211 243 946</p>
+          </div>
+          <div class="bg-white p-5 rounded shadow animate-slide-up delay-100">
+            <h5 class="text-xl font-bold text-blue-800">Muchinga Police Station</h5>
+            <p>Mon–Fri, near Matero Constituency Office.</p>
+          </div>
+          <div class="bg-white p-5 rounded shadow animate-slide-up delay-200">
+            <h5 class="text-xl font-bold text-blue-800">Chunga Police Post</h5>
+            <p>Constructed under the CDF initiative for Matero.</p>
+          </div>
+          <div class="bg-white p-5 rounded shadow animate-slide-up delay-300">
+            <h5 class="text-xl font-bold text-blue-800">Chaisa Police Post</h5>
+            <p>Serves Mandevu area. Built under CDF.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hospitals -->
+      <div class="mb-8">
+        <h4 class="text-2xl font-semibold mb-4 text-green-700">Hospitals</h4>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-5 rounded shadow">
+            <h5 class="text-xl font-bold text-green-800">Matero Level 1 Hospital</h5>
+            <p>Offers emergency and outpatient services.</p>
+          </div>
+          <div class="bg-white p-5 rounded shadow">
+            <h5 class="text-xl font-bold text-green-800">Chingwele Clinic</h5>
+            <p>Neighboring Matero Level 1 for outpatient care.</p>
+          </div>
+          <div class="bg-white p-5 rounded shadow">
+            <h5 class="text-xl font-bold text-green-800">MAX Clinic</h5>
+            <p>Located in Chipata Compound. Plot DF-510, Kasangula Rd, Lusaka.</p>
+          </div>
+          <div class="bg-white p-5 rounded shadow">
+            <h5 class="text-xl font-bold text-green-800">Levy Mwanawasa UTH</h5>
+            <p>Major referral hospital. Great East Road, Chainama Hills.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Fire Stations -->
+      <div>
+        <h4 class="text-2xl font-semibold mb-4 text-yellow-700">Fire Stations</h4>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-5 rounded shadow">
+            <h5 class="text-xl font-bold text-yellow-800">Levy Junction Fire Station</h5>
+            <p>Fast emergency responses in Matero and Mandevu.</p>
+          </div>
+          <div class="bg-white p-5 rounded shadow">
+            <h5 class="text-xl font-bold text-yellow-800">Lusaka Fire Department</h5>
+            <p>Call 996 or 0211 220180. Serving the entire city.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="mb-16">
+      <h4 class="text-2xl font-semibold mb-6 text-red-700">Why Choose Us?</h4>
+      <ul class="list-disc list-inside text-lg space-y-2">
+        <li>Instant connection to emergency responders</li>
+        <li>Integrated police, hospital & fire service coordination</li>
+        <li>GPS tracking for faster location-based response</li>
+        <li>Transparent, trackable emergency requests</li>
+        <li>Available 24/7 to ensure safety at all times</li>
+      </ul>
+    </section>
+
+    <!-- Info Highlights -->
+    <section class="grid md:grid-cols-2 gap-6 text-lg">
+      <div class="bg-white p-6 rounded shadow border-l-4 border-red-500">
+        <h5 class="font-semibold text-red-600 mb-2">⚡ Fast Emergency Dispatch</h5>
+        <p>Tap once—get help from police, hospital or fire station.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow border-l-4 border-blue-500">
+        <h5 class="font-semibold text-blue-600 mb-2">🌍 Community-Focused</h5>
+        <p>Specialized for Matero and Mandevu’s unique needs.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow border-l-4 border-green-500">
+        <h5 class="font-semibold text-green-600 mb-2">🔗 One Platform</h5>
+        <p>No confusion. We alert the right team instantly.</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow border-l-4 border-yellow-500">
+        <h5 class="font-semibold text-yellow-600 mb-2">📍 Smart Location</h5>
+        <p>We use GPS to find you—even if you don’t know your location.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-6 text-center">
+<p class="mb-2">&copy; 2025 Lusaka Emergency Dispatch System|Designed for Rapid Response </p>
+  </footer>
+
+</body>
+</html>

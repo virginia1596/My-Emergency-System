@@ -1,0 +1,219 @@
+
+<?php
+$host = "localhost";
+$username = "root";
+$password = ""; // or your password
+$database = "emergency_db"; // your database name
+
+$conn = new mysqli($host, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Profile - Emergency Dispatch System</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: linear-gradient(to right, #b3d9ff, #e6f2ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      animation: fadeInBody 1.5s ease-in;
+    }
+
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    nav {
+      background-color: black;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      animation: float 3s ease-in-out infinite;
+      object-fit: cover;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      padding: 5px 10px;
+      transition: color 0.3s ease, background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #000;
+      background-color: #ffcc00;
+      border-radius: 4px;
+    }
+
+    .container {
+      max-width: 500px;
+      background: white;
+      padding: 30px;
+      margin: 40px auto;
+      border-radius: 10px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      animation: fadeInForm 1s ease-in-out;
+    }
+
+    @keyframes fadeInForm {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      transition: border 0.3s;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      border-color: #66a3ff;
+      outline: none;
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 25px;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #005c99;
+    }
+
+    .success {
+      background: #d4edda;
+      padding: 10px;
+      margin-top: 10px;
+      color: #155724;
+      border-radius: 5px;
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      text-align: center;
+      padding: 20px 10px;
+      margin-top: auto;
+    }
+
+    footer a {
+      color: #66ccff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="Pictures/pic 2.png" alt="Emergency Dispatch Logo">
+    </div>
+    <div class="nav-links">
+      <a href="Home.html">Home</a>
+      <a href="Register.html">Register</a>
+      <a href="Login.php">Login</a>
+      <a href="Services.html">Services</a>
+      <a href="Profile.html">My Profile</a>
+      <a href="About.html">About Us</a>
+      <a href="Contact.html">Contact Us</a>
+      <a href="EmergencyTips.html">Emergency Tips</a>
+      <a href="Dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <!-- Profile Form -->
+  <div class="container">
+    <h2>My Profile</h2>
+    <form method="post" action="profile.php">
+      <label for="fullname">Full Name:</label>
+      <input type="text" name="fullname" id="fullname" value="" required>
+
+      <label for="phone">Phone:</label>
+      <input type="text" name="phone" id="phone" value="" required>
+
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" value="" required>
+
+      <input type="submit" value="Update Profile">
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="Logout.html">Logout</a></p>
+    <p>&copy; 2025 Lusaka Emergency Dispatch System | Designed for Rapid Response</p>
+  </footer>
+
+</body>
+</html>

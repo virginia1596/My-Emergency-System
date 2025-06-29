@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Dispatch System</title>
+
+  <style>
+    /* Logo floating and rounded */
+    .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      animation: float 4s ease-in-out infinite;
+      object-fit: cover;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-7px); }
+    }
+
+    /* Scrolling text animation */
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.9); opacity: 0; }
+      50% { transform: scale(1.05); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #cbe9f8, #e3f5ff);
+      color: #333;
+      line-height: 1.6;
+      animation: fadeIn 1s ease-in;
+    }
+
+    /* Scrolling welcome text */
+    .scrolling-text {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scroll-left 15s linear infinite;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    /* Header */
+    header {
+      background: #20232a;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: #ffcc00;
+      left: 0;
+      bottom: -4px;
+      transition: 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Intro Section */
+    .intro {
+      text-align: center;
+      padding: 50px 20px 20px;
+      animation: bounceIn 1.3s ease;
+    }
+
+    .intro h1 {
+      font-size: 2.2em;
+      margin-bottom: 10px;
+      color: #20232a;
+    }
+
+    /* Emergency Buttons */
+    .emergency-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 30px;
+      animation: fadeIn 1.5s ease-in;
+    }
+
+    .btn {
+      padding: 20px 30px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: white;
+      font-size: 1.1em;
+      font-weight: bold;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: bounceIn 1.5s ease;
+    }
+
+    .btn.police {
+      background-color: #007bff;
+    }
+
+    .btn.medical {
+      background-color: #28a745;
+    }
+
+    .btn.fire {
+      background-color: #dc3545;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Footer */
+    footer {
+      background: #20232a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      animation: fadeIn 2s ease-in;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scrolling Text -->
+  <div class="scrolling-text">
+    🚨LUSAKA EMERGENCY DISPATCH SYSTEM 🚨
+  </div>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="Pictures/pic 2.png" alt="Emergency Dispatch Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Profile.html">My Profile</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+        <li><a href="EmergencyTips.html">Emergency Tips</a></li>
+        <li><a href="Dash-board.php">Dashboard</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <section class="intro">
+      <h1>Need Emergency Help?</h1>
+      <h4>Select a service to get immediate assistance in Matero and Mandevu areas.</h4>
+    </section>
+
+    <section class="emergency-buttons">
+      <a href="Police.html" class="btn police">🚓 Police Emergency</a>
+      <a href="Medical.html" class="btn medical">🚑 Medical Emergency</a>
+      <a href="fire.html" class="btn fire">🔥 Fire Emergency</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p><a href="Logout.html">Logout</a></p>
+    <p>&copy; 2025 Lusaka Emergency Dispatch System | Designed for rapid response</p>
+  </footer>
+</body>
+</html>

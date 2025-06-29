@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medical Emergency Request</title>
+
+  <style>
+    /* Background gradient animation */
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(-45deg, #add8e6, #cfe2f3, #a2c4c9, #d1e0e0);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Marquee header styling */
+    header h1 {
+      text-align: center;
+      font-size: 24px;
+      color: #fff;
+      background-color: #20232a;
+      padding: 10px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { background-color: #007bff; }
+      50% { background-color: #0056b3; }
+      100% { background-color: #007bff; }
+    }
+
+    h1, h4 {
+      text-align: center;
+    }
+
+    form {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 500px;
+      margin: auto;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      animation: slideIn 1.2s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      margin-top: 20px;
+      background: #28a745;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: bounce 2s infinite;
+    }
+
+    button:hover {
+      background: #218838;
+      transform: scale(1.05);
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-5px);
+      }
+      60% {
+        transform: translateY(-3px);
+      }
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      color: #444;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1><marquee direction="left">LUSAKA EMERGENCY DISPATCH SYSTEM</marquee></h1>
+  </header>
+
+  <h1>🚑 Request Medical Assistance</h1>
+
+  <form>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" required>
+
+    <label for="medicalType">Medical Emergency Type</label>
+    <select id="medicalType" required>
+      <option>Accident</option>
+      <option>Heart Attack</option>
+      <option>Unconscious Person</option>
+      <option>Childbirth</option>
+      <option>Other</option>
+    </select>
+
+    <label for="ambulance">Need Ambulance?</label>
+    <select id="ambulance" required>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <label for="location">Your Location</label>
+    <input type="text" id="location" required>
+
+    <label for="details">Additional Details</label>
+    <textarea id="details" rows="4"></textarea>
+
+    <label for="file">Upload Photo/Video (optional)</label>
+    <input type="file" id="file" accept="image/*,video/*">
+
+    <button type="submit">Submit Request</button>
+  </form>
+
+  <br><br>
+  <div style="text-align: center;">
+    <a href="Services.html">
+      <button>⬅ Previous</button>
+    </a>
+    <a href="Services.html">
+      <button>➡ Forward</button>
+    </a>
+  </div>
+  
+
+  <footer>
+
+       <li><a href="Logout.html" class="hover:underline font-semibold text-blue-600 transition ">Logout</a></li>
+    <h4>&copy; 2025 Lusaka Emergency Dispatch System | Designed for rapid response</h4>
+  </footer>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    function goForward() {
+      window.history.forward();
+    }
+  </script>
+
+</body>
+</html>

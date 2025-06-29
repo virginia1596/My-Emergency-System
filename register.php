@@ -1,0 +1,301 @@
+<?php
+// Step 1: Connect to MySQL database
+$servername = "localhost";
+$username = "root";     // default for XAMPP
+$password = "";         // default for XAMPP
+$dbname = "emergency_db";  // your database name
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// Step 2: Capture form data
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $username = $_POST['username'];
+  $first_name = $_POST['first_name'];
+  $last_name = $_POST['last_name'];
+  $age = $_POST['age'];
+  $email = $_POST['email'];
+  $phone = $_POST['phone'];
+  $password = password_hash($_POST['password'], PASSWORD_DEFAULT); // encrypted password
+  $role = $_POST['role'];
+
+  // Step 3: Insert into database
+  $sql = "INSERT INTO register (username, first_name, last_name, age, email, phone, password, role)
+          VALUES ('$username', '$first_name', '$last_name', '$age', '$email', '$phone', '$password', '$role')";
+
+  if ($conn->query($sql) === TRUE) {
+    echo "<script>alert('✅Registration successful.'); window.location.href='Login.html';</script>";
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+}
+
+$conn->close();
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register - Lusaka Emergency Dispatch System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #cce5ff, #e6f2ff);
+      background-attachment: fixed;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #20232a;
+      color: white;
+      padding: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo img {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    nav {
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      padding: 8px 0;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 100;
+      font-size: 1rem;
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+      text-decoration: underline;
+    }
+
+    .scrolling-text {
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scroll-left 15s linear infinite;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    .container {
+      max-width: 450px;
+      background-color: white;
+      margin: 40px auto;
+      padding: 30px 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .container h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #005a9c;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="password"],
+    select {
+      width: 100%;
+      padding: 6px;
+      margin: 10px 0;
+      border: 3px solid #ccc;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: transform 0.2s ease-in-out;
+    }
+
+    input:focus,
+    select:focus {
+      transform: scale(1.03);
+    }
+
+    input[type="submit"] {
+      width: 100%;
+      padding: 5px;
+      background-color: #005a9c;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: transform 0.2s ease-in-out, background-color 0.3s;
+    }
+
+    input[type="submit"]:hover {
+      background-color: green;
+      transform: scale(1.05);
+      animation: bounce 0.3s ease-in-out;
+    }
+
+    @keyframes bounce {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1.05); }
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .login-link a {
+      color: #005a9c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #20232a;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 40px;
+    }
+
+    @media screen and (max-width: 500px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    
+}
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+  object-fit: cover;
+}
+.logo img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+  object-fit: cover;
+}
+  </style>
+</head>
+<body>
+
+  <div class="scrolling-text">
+    🚨LUSAKA EMERGENCY DISPATCH SYSTEM🚨
+  </div>
+
+  <header>
+    <div class="logo">
+      <img src="Pictures/pic 2.png" alt="Emergency Dispatch Logo" width="80">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Register.html">Register</a></li>
+        <li><a href="Login.html">Login</a></li>
+         <li><a href="Services.html">Services</a></li>
+        <li><a href="Profile.html">My profile</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+        <li><a href="EmergencyTips.html">Emergency Tips</a></li>
+        <li class="nav-item"><a class="nav-link" href="Dash-board.php">Dash board</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Create Your Account</h2>
+
+    <form action="register.php" method="POST">
+      <input type="text" name="username" placeholder="username" required />
+      <input type="text" name="first_name" placeholder="first_name" required />
+      <input type="text" name="last_name" placeholder="last_name" required />
+      <input type="text" name="age" placeholder="age" required />
+      <input type="email" name="email" placeholder="email" required />
+      <input type="tel" name="phone" placeholder="phone" required />
+      <input type="password" name="password" placeholder="password" required />
+
+      <label for="role">Select Your Role</label>
+      <select id="role" name="role" required>
+        <option value="">-- Choose Role --</option>
+        <option value="Victim">Victim</option>
+        <option value="Admin">Admin</option>
+        <option value="Dispatcher">Dispatcher</option>
+        <option value="Responder">Responder</option>
+      </select>
+      <input type="submit" value="Register" />
+
+      <div class="login-link">
+        Already have an account? <a href="Login.html">Login here</a>
+      </div>
+    </form>
+
+<br><br>
+  <footer>
+       <li><a href="Logout.html">Logout</a></li>
+    <p>&copy; 2025 Lusaka Emergency Dispatch System | Designed for rapid response</p>
+  </footer>
+
+</body>
+</html>
+

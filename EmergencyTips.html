@@ -1,0 +1,129 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emergency Tips - Emergency Dispatch System</title>
+  <link rel="icon" href="favicon.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    .scrolling-text {
+      white-space: nowrap;
+      overflow: hidden;
+      box-sizing: border-box;
+      animation: scroll-left 15s linear infinite;
+      font-size: 24px;
+      font-weight: bold;
+      color: black;
+      padding: 10px;
+      text-align: center;
+      background-color: #fefce8;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    nav a:hover {
+      color: #ffcc00;
+    }
+  </style>
+</head>
+<body class="bg-blue-100 text-gray-900 font-sans">
+
+  <!-- Scrolling Banner -->
+  <div class="scrolling-text">🚨 LUSAKA EMERGENCY DISPATCH SYSTEM 🚨</div>
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-gray-800 to-gray-800 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <div class="logo">
+        <img src="Pictures/pic 2.png" alt="Logo" class="w-16 h-16 rounded-full border-2 border-white"/>
+      </div>
+      <nav class="space-x-6 animate__animated animate__fadeInRight">
+        <a href="Home.html" class="hover:underline">Home</a>
+        <a href="Register.html" class="hover:underline">Register</a>
+        <a href="Login.html" class="hover:underline">Login</a>
+        <a href="Services.html" class="hover:underline">Services</a>
+        <a href="Profile.html" class="hover:underline">My Profile</a>
+        <a href="About.html" class="hover:underline">About Us</a>
+        <a href="Contact.html" class="hover:underline">Contact</a>
+        <a href="EmergencyTips.html" class="hover:underline font-semibold">Emergency Tips</a>
+        <a href="Dash-board.php" class="hover:underline font-semibold">Dash Board</a>
+    
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="py-12 text-center">
+    <h2 class="text-4xl font-bold text-red-700 mb-4 animate__animated animate__zoomIn">🛡️ Emergency Tips for Matero & Mandevu Residents</h2>
+    <p class="text-lg text-gray-700 max-w-2xl mx-auto animate__animated animate__fadeInUp">
+      Stay informed and prepared. Below are essential tips and contact numbers for emergencies in your area.
+    </p>
+  </section>
+
+  <!-- Tips Grid -->
+  <section class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 py-10">
+
+    <!-- Fire Emergency Tips -->
+    <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-yellow-500 animate__animated animate__fadeInUp animate__delay-1s">
+      <h3 class="text-2xl font-bold text-yellow-700 mb-4">🔥 Fire Emergencies</h3>
+      <ul class="list-disc list-inside text-sm space-y-2">
+        <li>Evacuate immediately and call the Lusaka Fire Department at <strong>+260 211 220180</strong> or <strong>+260 977 109987</strong>.</li>
+        <li>Use fire extinguishers if trained and it's safe to do so.</li>
+        <li>Crawl low under smoke and cover your mouth with a wet cloth.</li>
+        <li>Do not re-enter the building once outside.</li>
+      </ul>
+    </div>
+
+    <!-- Medical Emergency Tips -->
+    <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-green-500 animate__animated animate__fadeInUp animate__delay-2s">
+      <h3 class="text-2xl font-bold text-green-700 mb-4">🩺 Medical Emergencies</h3>
+      <ul class="list-disc list-inside text-sm space-y-2">
+        <li>Call the nearest hospital or ambulance service immediately.</li>
+        <li>Matero Level 1 Hospital: <strong>+260 977 800574</strong></li>
+        <li>St. Clare Mission Hospital: <strong>+260 975 973764</strong></li>
+        <li>Chipata First Level Hospital: <strong>+260 773 831658</strong></li>
+        <li>Provide first aid if trained and ensure the patient is comfortable while waiting for help.</li>
+      </ul>
+    </div>
+
+    <!-- Police Emergency Tips -->
+    <div class="bg-white rounded-xl shadow-md p-6 border-t-4 border-blue-500 animate__animated animate__fadeInUp animate__delay-3s">
+      <h3 class="text-2xl font-bold text-blue-700 mb-4">🚓 Security Emergencies</h3>
+      <ul class="list-disc list-inside text-sm space-y-2">
+        <li>In case of crime or security threats, contact the nearest police station:</li>
+        <li>Matero Police Station: <strong>+260 211 243946</strong></li>
+        <li>Muchinga Police Post: <strong>+260 211 243946</strong></li>
+        <li>Barlastone Police Post: [Contact number currently unavailable]</li>
+        <li>Provide clear information about the incident and your location.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- General Preparedness -->
+  <section class="bg-white mx-6 md:mx-auto max-w-4xl mt-12 mb-16 rounded-xl shadow-lg p-8 border-t-4 border-red-600 animate__animated animate__fadeInUp animate__delay-4s">
+    <h3 class="text-2xl font-bold text-red-700 mb-4 text-center">📌 Be Prepared</h3>
+    <ul class="list-disc list-inside text-sm space-y-2 text-gray-800">
+      <li>Save all emergency contact numbers in your phone.</li>
+      <li>Know the locations of emergency facilities in Matero and Mandevu.</li>
+      <li>Keep your house number and street name visible for responders.</li>
+      <li>Educate family members, especially children, on emergency procedures.</li>
+      <li>Participate in community safety programs and drills.</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-6 text-center text-sm">
+
+   <li><a href="Logout.html" class="hover:underline font-semibold text-blue-600 transition ">Logout</a></li>
+    <p>&copy; 2025 Lusaka Emergency Dispatch System | Designed for rapid response</p>
+  </footer>
+</body>
+</html>

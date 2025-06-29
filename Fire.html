@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <center>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fire Emergency Request</title>
+   <header>
+   <h1> <marquee direction="left"> LUSAKA EMERGENCY DISPATCH SYSTEM</marquee></h1>
+  </header>
+
+  <style>
+    body { font-family: Arial;
+     padding: 20px;
+      background: #f8f9fa; }
+    h1 { color: #000000; }
+    form { background: #fff;
+     padding: 20px; 
+     border-radius: 8px; 
+     max-width: 500px; 
+     margin: auto; 
+     box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    label { display: block; 
+      margin-top: 15px; 
+      font-weight: bold; }
+    input, select, textarea { width: 100%;
+     padding: 10px; 
+     margin-top: 5px; 
+     border: 1px solid #ccc; 
+     border-radius: 5px; }
+    button { margin-top: 20px; 
+      background: #dc3545; 
+      color: #fff; padding: 12px; 
+      border: none; 
+      border-radius: 5px; 
+      font-size: 16px; }
+    button:hover { background: #c82333; }
+  </style>
+</head>
+<body>
+ 
+<!--style for background color-->
+        <style>
+        body {
+            background-color: lightblue; /* You can use color names, hex, or RGB */
+              }
+          </style>
+
+  <h1>🔥 Report Fire Emergency</h1>
+  <form>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" required>
+
+    <label for="fireType">Type of Fire</label>
+    <select id="fireType" required>
+      <option>House Fire</option>
+      <option>Electrical Fire</option>
+      <option>Forest/Grass Fire</option>
+      <option>Vehicle Fire</option>
+      <option>Other</option>
+    </select>
+
+    <label for="trapped">Is anyone trapped?</label>
+    <select id="trapped" required>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <label for="contained">Is fire contained?</label>
+    <select id="contained" required>
+      <option>No</option>
+      <option>Yes</option>
+    </select>
+
+    <label for="location">Your Location</label>
+    <input type="text" id="location" required>
+
+    <label for="details">Additional Details</label>
+    <textarea id="details" rows="4"></textarea>
+
+    <label for="file">Upload Photo/Video (optional)</label>
+    <input type="file" id="file" accept="image/*,video/*">
+
+    <button type="submit">Submit Request</button>
+  </form>
+
+          <br><br>
+
+          <a href="Services.html"> <button onclick="goBack()">⬅ Previous</button></a>
+          <a href="Services.html"><button onclick="goForward()">➡ Forward</button></a>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+
+    function goForward() {
+      window.history.forward();
+    }
+  </script>
+
+  <br><br><br>
+  <footer>
+    
+       <li><a href="Logout.html" class="hover:underline font-semibold text-blue-600 transition ">Logout</a></li>
+    <h4>&copy; 2025 Lusaka Emergency Dispatch System | Designed for rapid response</h4>
+  </footer>
+
+</body>
+</html>
